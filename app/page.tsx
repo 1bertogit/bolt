@@ -15,6 +15,7 @@ import { PrerequisitesSection } from "@/components/sections/prerequisites-sectio
 import { PricingSection } from "@/components/sections/pricing-section";
 import { ScheduleSection } from "@/components/sections/schedule-section";
 import { LocationSection } from "@/components/sections/location-section";
+import { EventLocationSection } from "@/components/sections/event-location-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
 
@@ -37,7 +38,7 @@ export default function Home() {
       <PrerequisitesSection />
       <PricingSection />
       <ScheduleSection />
-      <LocationSection />
+      <EventLocationSection />
       <FAQSection />
       <CTASection />
       
