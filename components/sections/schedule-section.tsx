@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, Download, Users, Coffee, BookOpen, Microscope, MessageCircle, UtensilsCrossed, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Download, Clock, Users, Coffee, BookOpen, Microscope, MessageCircle, UtensilsCrossed, Award } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface ScheduleItem {
   time: string;
@@ -156,7 +157,7 @@ export function ScheduleSection() {
   };
 
   return (
-    <section id="schedule" className="py-24 bg-gray-50">
+    <section id="schedule" className="py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
           <div>
@@ -169,7 +170,7 @@ export function ScheduleSection() {
           </div>
           <Button
             onClick={handleDownload}
-            className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700"
+            className="mt-4 md:mt-0 gold-gradient text-white hover:opacity-90"
           >
             <Download className="mr-2 h-4 w-4" />
             Baixar Cronograma
@@ -177,16 +178,31 @@ export function ScheduleSection() {
         </div>
 
         <Tabs defaultValue="day-1" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="day-1">Dia 1</TabsTrigger>
-            <TabsTrigger value="day-2">Dia 2</TabsTrigger>
-            <TabsTrigger value="day-3">Dia 3</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 mb-8 bg-gradient-to-r from-blue-50 via-white to-blue-50 p-1 rounded-xl">
+            <TabsTrigger 
+              value="day-1"
+              className="data-[state=active]:gold-gradient data-[state=active]:text-white"
+            >
+              Dia 1
+            </TabsTrigger>
+            <TabsTrigger 
+              value="day-2"
+              className="data-[state=active]:gold-gradient data-[state=active]:text-white"
+            >
+              Dia 2
+            </TabsTrigger>
+            <TabsTrigger 
+              value="day-3"
+              className="data-[state=active]:gold-gradient data-[state=active]:text-white"
+            >
+              Dia 3
+            </TabsTrigger>
           </TabsList>
 
           {Object.entries(scheduleData).map(([day, data]) => (
             <TabsContent key={day} value={day}>
-              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+                <h3 className="text-xl font-bold gold-text">
                   {data.date}
                 </h3>
               </div>
@@ -194,15 +210,15 @@ export function ScheduleSection() {
                 {data.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg"
+                    className="bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg border border-gray-100 hover:border-blue-100"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 flex-shrink-0">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 flex-shrink-0">
                         <Clock className="h-6 w-6 text-blue-600" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-blue-600 font-medium">
+                          <span className="gold-text font-medium">
                             {item.time}
                           </span>
                         </div>
