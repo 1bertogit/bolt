@@ -1,113 +1,231 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Coffee, Edit, FolderOpen, Microscope, Scissors } from "lucide-react";
+import { Clock, Download, Users, Coffee, BookOpen, Microscope, MessageCircle, UtensilsCrossed, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const scheduleData = [
-  {
-    day: "Dia 1",
-    date: "15 de Março, 2025",
-    schedule: [
-      { time: "08:00 - 09:00", activity: "Recepção e Credenciamento", icon: <FolderOpen className="h-5 w-5" /> },
-      { time: "09:00 - 10:30", activity: "Introdução à Anatomia Facial Avançada", icon: <BookOpen className="h-5 w-5" /> },
-      { time: "10:30 - 11:00", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "11:00 - 12:30", activity: "Demonstração: Face Média e Inferior", icon: <Microscope className="h-5 w-5" /> },
-      { time: "12:30 - 14:00", activity: "Almoço", icon: <Coffee className="h-5 w-5" /> },
-      { time: "14:00 - 16:00", activity: "Hands-On: Dissecção Inicial", icon: <Scissors className="h-5 w-5" /> },
-      { time: "16:00 - 16:30", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "16:30 - 18:30", activity: "Hands-On: SMAS e Ligamentos", icon: <Scissors className="h-5 w-5" /> },
-      { time: "18:30 - 19:00", activity: "Discussão e Fechamento", icon: <Edit className="h-5 w-5" /> }
+interface ScheduleItem {
+  time: string;
+  title: string;
+  description: string;
+  mentor?: string;
+  icon: JSX.Element;
+}
+
+const scheduleData: { [key: string]: { date: string; items: ScheduleItem[] } } = {
+  "day-1": {
+    date: "26 de Junho de 2025",
+    items: [
+      {
+        time: "08:00 - 09:00",
+        title: "Recepção e credenciamento",
+        description: "Café da manhã de boas-vindas.",
+        icon: <Coffee className="h-5 w-5" />,
+        mentor: "Equipe Técnica"
+      },
+      {
+        time: "09:00 - 10:30",
+        title: "Aula teórica introdutória",
+        description: "Fundamentos anatômicos do LowerLift.",
+        icon: <BookOpen className="h-5 w-5" />,
+        mentor: "Dr. Daniel Nunes"
+      },
+      {
+        time: "10:30 - 12:00",
+        title: "Live surgery demonstrativa",
+        description: "Técnica avançada em cadáver.",
+        icon: <Microscope className="h-5 w-5" />,
+        mentor: "Dr. João Ilgenfritz"
+      },
+      {
+        time: "12:00 - 13:30",
+        title: "Almoço e networking",
+        description: "Momento para troca de experiências.",
+        icon: <UtensilsCrossed className="h-5 w-5" />
+      },
+      {
+        time: "13:30 - 17:00",
+        title: "Hands-on: Região periocular",
+        description: "Prática individualizada com mentoria.",
+        icon: <Users className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "17:00 - 18:00",
+        title: "Debriefing e discussões",
+        description: "Análise dos procedimentos do dia.",
+        icon: <MessageCircle className="h-5 w-5" />,
+        mentor: "Mentores"
+      }
     ]
   },
-  {
-    day: "Dia 2",
-    date: "16 de Março, 2025",
-    schedule: [
-      { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5" /> },
-      { time: "09:00 - 10:30", activity: "Demonstração: Região Cervical", icon: <Microscope className="h-5 w-5" /> },
-      { time: "10:30 - 11:00", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "11:00 - 12:30", activity: "Hands-On: Platisma e Fáscias", icon: <Scissors className="h-5 w-5" /> },
-      { time: "12:30 - 14:00", activity: "Almoço", icon: <Coffee className="h-5 w-5" /> },
-      { time: "14:00 - 16:00", activity: "Hands-On: Estruturas Neurovasculares", icon: <Scissors className="h-5 w-5" /> },
-      { time: "16:00 - 16:30", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "16:30 - 18:30", activity: "Técnicas de Suspensão e Lifting", icon: <Microscope className="h-5 w-5" /> },
-      { time: "18:30 - 19:00", activity: "Discussão e Fechamento", icon: <Edit className="h-5 w-5" /> }
+  "day-2": {
+    date: "27 de Junho de 2025",
+    items: [
+      {
+        time: "08:00 - 08:30",
+        title: "Revisão anatômica dirigida",
+        description: "Revisão dos conceitos fundamentais.",
+        icon: <BookOpen className="h-5 w-5" />,
+        mentor: "Dr. Daniel Nunes"
+      },
+      {
+        time: "08:30 - 12:00",
+        title: "Hands-on: Face média",
+        description: "Treinamento técnico com mentoria ativa.",
+        icon: <Users className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "12:00 - 13:30",
+        title: "Almoço executivo",
+        description: "Pausa para refeição e networking.",
+        icon: <UtensilsCrossed className="h-5 w-5" />
+      },
+      {
+        time: "13:30 - 17:00",
+        title: "Hands-on: Região submandibular",
+        description: "Abordagens profundas com precisão anatômica.",
+        icon: <Microscope className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "17:00 - 18:00",
+        title: "Discussão de casos clínicos",
+        description: "Análise de casos e esclarecimento de dúvidas.",
+        icon: <MessageCircle className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "20:00",
+        title: "Jantar com mentores",
+        description: "Exclusivo para Plano Diamond.",
+        icon: <UtensilsCrossed className="h-5 w-5" />,
+        mentor: "Mentores"
+      }
     ]
   },
-  {
-    day: "Dia 3",
-    date: "17 de Março, 2025",
-    schedule: [
-      { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5" /> },
-      { time: "09:00 - 10:30", activity: "Demonstração: Região Periorbital", icon: <Microscope className="h-5 w-5" /> },
-      { time: "10:30 - 11:00", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "11:00 - 12:30", activity: "Hands-On: Septos e Ligamentos", icon: <Scissors className="h-5 w-5" /> },
-      { time: "12:30 - 14:00", activity: "Almoço", icon: <Coffee className="h-5 w-5" /> },
-      { time: "14:00 - 16:00", activity: "Hands-On: Técnicas Completas", icon: <Scissors className="h-5 w-5" /> },
-      { time: "16:00 - 16:30", activity: "Coffee Break", icon: <Coffee className="h-5 w-5" /> },
-      { time: "16:30 - 18:00", activity: "Mesa Redonda: Casos Clínicos", icon: <Edit className="h-5 w-5" /> },
-      { time: "18:00 - 19:00", activity: "Cerimônia de Encerramento e Certificados", icon: <FolderOpen className="h-5 w-5" /> }
+  "day-3": {
+    date: "28 de Junho de 2025",
+    items: [
+      {
+        time: "08:00 - 10:00",
+        title: "Sessão prática integrativa",
+        description: "LowerLift completo.",
+        icon: <Users className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "10:00 - 12:00",
+        title: "Sessão de fixações profundas",
+        description: "Vetores de tração e técnicas avançadas.",
+        icon: <Microscope className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "12:00 - 13:30",
+        title: "Almoço e encerramento",
+        description: "Momento de confraternização.",
+        icon: <UtensilsCrossed className="h-5 w-5" />
+      },
+      {
+        time: "13:30 - 16:00",
+        title: "Avaliação individual",
+        description: "Feedback técnico personalizado.",
+        icon: <MessageCircle className="h-5 w-5" />,
+        mentor: "Mentores"
+      },
+      {
+        time: "16:00 - 17:00",
+        title: "Entrega de certificados",
+        description: "Encerramento oficial do curso.",
+        icon: <Award className="h-5 w-5" />,
+        mentor: "Equipe Técnica"
+      }
     ]
   }
-];
+};
 
 export function ScheduleSection() {
-  const [activeTab, setActiveTab] = useState(0);
-  
+  const [activeTab, setActiveTab] = useState("day-1");
+
+  const handleDownload = () => {
+    // TODO: Implement PDF download
+    alert("Download do cronograma em PDF estará disponível em breve!");
+  };
+
   return (
     <section id="schedule" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Cronograma Completo
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Três dias de imersão intensiva em anatomia e técnicas cirúrgicas avançadas.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Cronograma Completo
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl">
+              Três dias de imersão intensiva em anatomia e técnicas cirúrgicas avançadas.
+            </p>
+          </div>
+          <Button
+            onClick={handleDownload}
+            className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700"
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Baixar Cronograma
+          </Button>
         </div>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center mb-8 border-b border-gray-200">
-          {scheduleData.map((day, index) => (
-            <button
-              key={index}
-              className={`px-4 py-3 font-medium text-sm md:text-base transition-colors border-b-2 ${
-                activeTab === index 
-                  ? 'text-blue-600 border-blue-600' 
-                  : 'text-gray-600 border-transparent hover:text-blue-600 hover:border-blue-300'
-              }`}
-              onClick={() => setActiveTab(index)}
-            >
-              {day.day} • {day.date}
-            </button>
-          ))}
-        </div>
-        
-        {/* Schedule Table */}
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
-          <div className="p-6 bg-blue-50 border-b border-blue-100">
-            <h3 className="text-xl font-bold text-gray-900">
-              {scheduleData[activeTab].day} - {scheduleData[activeTab].date}
-            </h3>
-          </div>
-          
-          <div className="divide-y divide-gray-100">
-            {scheduleData[activeTab].schedule.map((item, index) => (
-              <div 
-                key={index} 
-                className="flex items-start p-6 hover:bg-gray-50 transition-colors"
-              >
-                <div className="w-24 flex-shrink-0 font-medium text-gray-700">{item.time}</div>
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <span className="text-gray-800">{item.activity}</span>
-                </div>
+        <Tabs defaultValue="day-1" className="w-full" onValueChange={setActiveTab}>
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="day-1">Dia 1</TabsTrigger>
+            <TabsTrigger value="day-2">Dia 2</TabsTrigger>
+            <TabsTrigger value="day-3">Dia 3</TabsTrigger>
+          </TabsList>
+
+          {Object.entries(scheduleData).map(([day, data]) => (
+            <TabsContent key={day} value={day}>
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {data.date}
+                </h3>
               </div>
-            ))}
-          </div>
-        </div>
+              <div className="space-y-6">
+                {data.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 flex-shrink-0">
+                        <Clock className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-blue-600 font-medium">
+                            {item.time}
+                          </span>
+                        </div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-2">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-600 mb-3">
+                          {item.description}
+                        </p>
+                        {item.mentor && (
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <Users className="h-4 w-4" />
+                            <span>{item.mentor}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </section>
   );
