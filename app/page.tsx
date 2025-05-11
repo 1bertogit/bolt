@@ -13,8 +13,8 @@ import { ComparisonSection } from "@/components/sections/comparison-section";
 import { LogisticsSection } from "@/components/sections/logistics-section";
 import { PrerequisitesSection } from "@/components/sections/prerequisites-section";
 import { PricingSection } from "@/components/sections/pricing-section";
+import { PlansComparisonSection } from "@/components/sections/plans-comparison-section";
 import { ScheduleSection } from "@/components/sections/schedule-section";
-import { LocationSection } from "@/components/sections/location-section";
 import { EventLocationSection } from "@/components/sections/event-location-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
@@ -37,6 +37,7 @@ export default function Home() {
       <LogisticsSection />
       <PrerequisitesSection />
       <PricingSection />
+      <PlansComparisonSection />
       <ScheduleSection />
       <EventLocationSection />
       <FAQSection />
