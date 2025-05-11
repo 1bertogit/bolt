@@ -1,3 +1,5 @@
+"use client";
+
 import { CheckCircle, Clock, Users } from "lucide-react";
 
 const features = [
