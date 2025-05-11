@@ -6,6 +6,7 @@ import { ExperienceSection } from "@/components/sections/experience-section";
 import { FrustrationsSection } from "@/components/sections/frustrations-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { MentorsSection } from "@/components/sections/mentors-section";
+import { TransformationsSection } from "@/components/sections/transformations-section";
 import { DifferentialsSection } from "@/components/sections/differentials-section";
 import { AnatomicalRegionsSection } from "@/components/sections/anatomical-regions-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
@@ -29,6 +30,7 @@ export default function Home() {
       <FrustrationsSection />
       <AboutSection />
       <MentorsSection />
+      <TransformationsSection />
       <DifferentialsSection />
       <AnatomicalRegionsSection />
       <TestimonialsSection />
