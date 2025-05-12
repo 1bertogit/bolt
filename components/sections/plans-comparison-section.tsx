@@ -37,6 +37,10 @@ const plans = [
 ];
 
 export function PlansComparisonSection() {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="plans" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -92,11 +96,14 @@ export function PlansComparisonSection() {
                 <TableCell></TableCell>
                 {plans.map(plan => (
                   <TableCell key={`${plan.name}-cta`} className="text-center p-4">
-                    <Button className={`w-full ${
-                      plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
-                      plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
-                      'bg-black hover:bg-gray-800'
-                    }`}>
+                    <Button 
+                      className={`w-full ${
+                        plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
+                        plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
+                        'bg-black hover:bg-gray-800'
+                      }`}
+                      onClick={handleWhatsAppClick}
+                    >
                       {plan.cta}
                     </Button>
                   </TableCell>
@@ -136,11 +143,14 @@ export function PlansComparisonSection() {
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <Button className={`w-full ${
-                    plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
-                    plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
-                    'bg-black hover:bg-gray-800'
-                  }`}>
+                  <Button 
+                    className={`w-full ${
+                      plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
+                      plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
+                      'bg-black hover:bg-gray-800'
+                    }`}
+                    onClick={handleWhatsAppClick}
+                  >
                     {plan.cta}
                   </Button>
                 </div>

@@ -21,7 +21,7 @@ export function CTASection() {
           <Button 
             size="lg" 
             className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-gray-900 text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center"
-            onClick={() => window.location.href = "#pricing"}
+            onClick={() => window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer')}
           >
             QUERO ME INSCREVER
             <ArrowRight className="ml-2 h-5 w-5" />

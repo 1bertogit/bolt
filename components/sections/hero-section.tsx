@@ -63,7 +63,7 @@ export function HeroSection() {
             <Button 
               size="lg" 
               className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
-              onClick={() => window.location.href = "#pricing"}
+              onClick={() => window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer')}
             >
               GARANTIR MINHA VAGA AGORA
               <ArrowRight className="h-5 w-5" />
