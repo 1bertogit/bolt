@@ -23,7 +23,7 @@ const scheduleData = [
     ]
   },
   {
-    day: "Dia 2", 
+    day: "Dia 2",
     date: "16 de Março, 2025",
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
@@ -39,7 +39,7 @@ const scheduleData = [
   },
   {
     day: "Dia 3",
-    date: "17 de Março, 2025", 
+    date: "17 de Março, 2025",
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
       { time: "09:00 - 10:30", activity: "Demonstração: Região Periorbital", icon: <Microscope className="h-5 w-5 text-blue-600" /> },
@@ -55,8 +55,11 @@ const scheduleData = [
 ];
 
 export function ScheduleSection() {
+  const [activeTab, setActiveTab] = useState("day1");
+
   const handleDownloadSchedule = () => {
-    alert("O cronograma detalhado será enviado por email após a inscrição.");
+    // Open email modal with pre-filled subject
+    window.location.href = `mailto:${SITE_CONFIG.contact.email}?subject=Solicitar Cronograma Detalhado - Beyond the LowerLift&body=Olá, gostaria de receber o cronograma detalhado do Beyond the LowerLift Cadaver Lab.`;
   };
 
   return (
@@ -77,12 +80,12 @@ export function ScheduleSection() {
             className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             <Download className="mr-2 h-4 w-4" />
-            Baixar Cronograma Detalhado
+            Solicitar Cronograma Detalhado
           </Button>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Tabs defaultValue="day1" className="w-full">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-8">
               {scheduleData.map((day, index) => (
                 <TabsTrigger key={index} value={`day${index + 1}`}>
