@@ -58,8 +58,11 @@ export function ScheduleSection() {
   const [activeTab, setActiveTab] = useState("day1");
 
   const handleDownloadSchedule = () => {
-    // Open email modal with pre-filled subject
-    window.location.href = `mailto:${SITE_CONFIG.contact.email}?subject=Solicitar Cronograma Detalhado - Beyond the LowerLift&body=Olá, gostaria de receber o cronograma detalhado do Beyond the LowerLift Cadaver Lab.`;
+    const emailSubject = encodeURIComponent("Solicitar Cronograma Detalhado - Beyond the LowerLift");
+    const emailBody = encodeURIComponent(
+      "Olá,\n\nGostaria de receber o cronograma detalhado do Beyond the LowerLift Cadaver Lab.\n\nAtenciosamente."
+    );
+    window.location.href = `mailto:${SITE_CONFIG.contact.email}?subject=${emailSubject}&body=${emailBody}`;
   };
 
   return (
