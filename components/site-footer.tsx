@@ -26,25 +26,34 @@ export function SiteFooter() {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href={`mailto:${SITE_CONFIG.contact.email}`}
+                href="mailto:contato@deepneckacademy.com"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a 
-                href={`tel:${SITE_CONFIG.contact.phone.replace(/\D/g, '')}`}
+                href="tel:5567911554980"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Telefone"
               >
                 <Phone className="h-5 w-5" />
               </a>
               <a 
-                href={`https://instagram.com/${SITE_CONFIG.contact.instagram.replace('@', '')}`}
+                href="https://instagram.com/dr.danielnunes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Instagram"
+                aria-label="Instagram Dr. Daniel"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://instagram.com/dr.joaoilgenfritz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram Dr. João"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -92,10 +101,10 @@ export function SiteFooter() {
                 <div>
                   <p className="text-white">Email:</p>
                   <a 
-                    href={`mailto:${SITE_CONFIG.contact.email}`}
+                    href="mailto:contato@deepneckacademy.com"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {SITE_CONFIG.contact.email}
+                    contato@deepneckacademy.com
                   </a>
                 </div>
               </li>
@@ -104,10 +113,10 @@ export function SiteFooter() {
                 <div>
                   <p className="text-white">Telefone:</p>
                   <a 
-                    href={`tel:${SITE_CONFIG.contact.phone.replace(/\D/g, '')}`}
+                    href="tel:5567911554980"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {SITE_CONFIG.contact.phone}
+                    +55 67 9115-5498
                   </a>
                 </div>
               </li>
@@ -115,14 +124,24 @@ export function SiteFooter() {
                 <Instagram className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white">Instagram:</p>
-                  <a 
-                    href={`https://instagram.com/${SITE_CONFIG.contact.instagram.replace('@', '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {SITE_CONFIG.contact.instagram}
-                  </a>
+                  <div className="space-y-1">
+                    <a 
+                      href="https://instagram.com/dr.danielnunes"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors block"
+                    >
+                      @dr.danielnunes
+                    </a>
+                    <a 
+                      href="https://instagram.com/dr.joaoilgenfritz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors block"
+                    >
+                      @dr.joaoilgenfritz
+                    </a>
+                  </div>
                 </div>
               </li>
             </ul>
