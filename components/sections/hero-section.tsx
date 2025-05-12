@@ -18,9 +18,9 @@ export function HeroSection() {
       }
     };
     
-    window.addEventListener("resize", handleMarqueeAnimation);
+    window.addEventListener('resize', handleMarqueeAnimation);
     return () => {
-      window.removeEventListener("resize", handleMarqueeAnimation);
+      window.removeEventListener('resize', handleMarqueeAnimation);
     };
   }, []);
 
@@ -29,7 +29,7 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg"
+          src={SITE_CONFIG.images.hero}
           alt="Beyond the LowerLift Background"
           layout="fill"
           objectFit="cover"

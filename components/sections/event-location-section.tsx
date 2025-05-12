@@ -76,7 +76,7 @@ export function EventLocationSection() {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-transform duration-300">
                 <img
-                  src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg"
+                  src={SITE_CONFIG.images.location}
                   alt="Centro de Treinamento"
                   className="w-full h-full object-cover aspect-video"
                 />
