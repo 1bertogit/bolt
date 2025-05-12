@@ -14,7 +14,6 @@ import { EventGallerySection } from "@/components/sections/event-gallery-section
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import { LogisticsSection } from "@/components/sections/logistics-section";
-import { PrerequisitesSection } from "@/components/sections/prerequisites-section";
 import { PlansComparisonSection } from "@/components/sections/plans-comparison-section";
 import { ScheduleSection } from "@/components/sections/schedule-section";
 import { EventLocationSection } from "@/components/sections/event-location-section";
@@ -28,24 +27,21 @@ export default function Home() {
       <FloatingCTA />
       
       <HeroSection />
-      <ExperienceSection />
-      <FrustrationsSection />
       <AboutSection />
-      <InstructorsSection />
+      <FrustrationsSection />
       <ResultsShowcaseSection />
-      <DifferentialsSection />
-      <AnatomicalRegionsSection />
       <TechniquesSection />
-      <EventGallerySection />
-      <TestimonialsSection />
+      <AnatomicalRegionsSection />
+      <DifferentialsSection />
+      <InstructorsSection />
       <ComparisonSection />
+      <EventGallerySection />
       <LogisticsSection />
-      <PrerequisitesSection />
-      <PlansComparisonSection />
       <ScheduleSection />
       <EventLocationSection />
-      <FAQSection />
+      <PlansComparisonSection />
       <CTASection />
+      <FAQSection />
       
       <SiteFooter />
     </main>
