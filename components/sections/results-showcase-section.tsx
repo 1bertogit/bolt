@@ -13,8 +13,8 @@ export function ResultsShowcaseSection() {
   const results = [{
     title: "LowerLift® com abordagem da região cervical",
     description: "Rejuvenescimento completo do terço inferior facial com definição do contorno mandibular e correção da flacidez cervical.",
-    before: SITE_CONFIG.images.results.lowerliftBefore,
-    after: SITE_CONFIG.images.results.lowerliftAfter,
+    before: "/assets/images/lowerlift-before.jpg",
+    after: "/assets/images/lowerlift-after.jpg",
     mentor: "Dr. Daniel Nunes"
   }, {
     title: "Face Média com Técnica Deep Plane",
