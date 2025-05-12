@@ -92,7 +92,7 @@ export function ResultsShowcaseSection() {
                     whileHover={{ x: 5 }}
                     className="mt-6 flex items-center text-blue-600 font-medium"
                   >
-                    Aprenda esta técnica no curso
+                    Aprenda esta técnica na Imersão
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </motion.div>
                 </div>
