@@ -150,3 +150,5 @@ const AnatomicalRegionsSection: React.FC = () => {
 };
 
 export default AnatomicalRegionsSection;
+
+export { AnatomicalRegionsSection }
