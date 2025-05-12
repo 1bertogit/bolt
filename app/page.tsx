@@ -13,6 +13,7 @@ import { AnatomicalRegionsSection } from "@/components/sections/anatomical-regio
 import { TechniquesSection } from "@/components/sections/techniques-section";
 import { EventGallerySection } from "@/components/sections/event-gallery-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { TableComparisonSection } from "@/components/sections/table-comparison-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import { LogisticsSection } from "@/components/sections/logistics-section";
 import { PrerequisitesSection } from "@/components/sections/prerequisites-section";
@@ -41,6 +42,7 @@ export default function Home() {
       <TechniquesSection />
       <EventGallerySection />
       <TestimonialsSection />
+      <TableComparisonSection />
       <ComparisonSection />
       <LogisticsSection />
       <PrerequisitesSection />
