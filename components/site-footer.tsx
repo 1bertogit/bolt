@@ -14,7 +14,7 @@ export function SiteFooter() {
               <Image 
                 src="/assets/images/logo_black.png" 
                 alt="Beyond the LowerLift Logo" 
-                width={180} 
+                width={90} 
                 height={60} 
                 className="object-contain"
               />
