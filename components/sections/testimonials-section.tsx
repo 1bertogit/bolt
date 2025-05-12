@@ -18,7 +18,7 @@ export function TestimonialsSection() {
       role: "Cirurgião",
       summary: "Saio do curso com um novo nível de confiança e técnicas avançadas.",
       quote: "Minha visão sobre cirurgia facial mudou completamente após as lições do Dr. Daniel Nunes e do Dr. João Ilgenfritz…",
-      image: "/assets/images/testemunho3.png"
+      image: "/assets/images/testemunho1-thiago.png"
     },
     {
       name: "Dr. Luciano Gazzoni",
@@ -27,7 +27,7 @@ export function TestimonialsSection() {
       role: "Cirurgião Plástico",
       summary: "Vivenciei uma experiência única com insights valiosos para minha prática.",
       quote: "A abordagem técnica e a precisão deles me ofereceram insights valiosos que impactarão meus resultados...",
-      image: "/assets/images/testemunho1-thiago.png"
+      image: "/assets/images/testemunho2.png"
     },
     {
       name: "Dr. Marco Aurélio Jajah",
@@ -36,7 +36,7 @@ export function TestimonialsSection() {
       role: "Cirurgião",
       summary: "Corrigi detalhes que fizeram toda a diferença nos resultados.",
       quote: "Ao acompanhar o trabalho do Dr. Daniel e do Dr. João, percebi a precisão e excelência, especialmente na região cervical…",
-      image: "/assets/images/testemunho2.png"
+      image: "/assets/images/testemunho3.png"
     }
   ];
   
