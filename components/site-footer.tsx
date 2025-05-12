@@ -12,7 +12,7 @@ export function SiteFooter() {
           <div className="col-span-1 md:col-span-2">
             <div className="mb-6">
               <Image 
-                src="/assets/images/logo.png" 
+                src="/assets/images/logo_black.png" 
                 alt="Beyond the LowerLift Logo" 
                 width={180} 
                 height={60} 
