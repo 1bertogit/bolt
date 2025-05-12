@@ -78,7 +78,7 @@ export function HeroSection() {
                 animation: "marquee 20s linear infinite"
               }}
             >
-              {Array(10).fill("◆ Imersão inédita").join(" ")}
+              {Array(10).fill("Imersão inédita").join(" ")}
             </div>
           </div>
         </div>
