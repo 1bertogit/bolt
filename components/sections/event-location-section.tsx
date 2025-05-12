@@ -72,16 +72,30 @@ export function EventLocationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2"
+            
           >
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img
-                  src={SITE_CONFIG.images.location}
-                  alt="Centro de Treinamento"
-                  className="w-full h-full object-cover aspect-video"
+                <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+                  <iframe
+                  src="https://api.vadoo.tv/iframe_test?id=y5yP6xeZ0AdNcA028sISwzYJ6CUjvKQA"
+                  style={{ 
+                    border: 0, 
+                    position: "absolute", 
+                    top: 0, 
+                    left: 0, 
+                    width: "100%", 
+                    height: "100%",
+                    borderRadius: "5px",
+                    overflow: "hidden"
+                  }}
+                    allowFullScreen={true}
+                    allow="autoplay"
+                    title="Event Location Video"             
                 />
               </div>
             </div>
+           </div>
           </motion.div>
         </div>
       </div>
