@@ -27,6 +27,11 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center text-white overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
+        <img
+          src={SITE_CONFIG.images.hero}
+          alt="Beyond the LowerLift Background"
+          className="w-full h-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
       </div>
 

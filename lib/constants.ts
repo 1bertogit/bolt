@@ -21,10 +21,10 @@ export const SITE_CONFIG = {
       joaoIlgenfritz: "/assets/images/mentor-joao-ilgenfritz.jpg"
     },
     results: {
-      lowerliftBefore: "/assets/images/event-2.jpg",
-      lowerliftAfter: "/assets/images/event-3.jpg",
-      facemediaBefore: "/assets/images/event-3.jpg",
-      facemediaAfter: "/assets/images/event-4.jpg"
+      lowerliftBefore: "/assets/images/lowerlift-before.jpg",
+      lowerliftAfter: "/assets/images/lowerlift-after.jpg",
+      facemediaBefore: "/assets/images/facemedia-before.jpg",
+      facemediaAfter: "/assets/images/facemedia-after.jpg"
     },
     regions: {
       periocular: "/assets/images/regiao-periocular.jpg",
