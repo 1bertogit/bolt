@@ -10,9 +10,12 @@ export const SITE_CONFIG = {
     black: "R$ 15.997,00"
   },
   contact: {
-    email: "contato@beyondthelowerlift.com",
-    phone: "+55 11 99999-9999",
-    instagram: "@beyondthelowerlift"
+    email: "contato@deepneckacademy.com",
+    phone: "+55 67 9115-5498",
+    instagram: {
+      daniel: "@dr.danielnunes",
+      joao: "@dr.joaoilgenfritz"
+    }
   },
   images: {
     hero: "/assets/images/event-1.jpg",
