@@ -23,7 +23,7 @@ const scheduleData = [
     ]
   },
   {
-    day: "Dia 2",
+    day: "Dia 2", 
     date: "16 de Março, 2025",
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
@@ -39,7 +39,7 @@ const scheduleData = [
   },
   {
     day: "Dia 3",
-    date: "17 de Março, 2025",
+    date: "17 de Março, 2025", 
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
       { time: "09:00 - 10:30", activity: "Demonstração: Região Periorbital", icon: <Microscope className="h-5 w-5 text-blue-600" /> },
