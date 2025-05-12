@@ -1,10 +1,9 @@
 "use client";
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { SITE_CONFIG } from "@/lib/constants";
 
 export function InstructorsSection() {
   const isMobile = useIsMobile();
@@ -42,14 +41,12 @@ export function InstructorsSection() {
           {instructors.map((instructor, index) => (
             <Card key={index} className="overflow-hidden border-blue-100 hover:border-blue-200 transition-all duration-300 group shadow-lg h-full">
               <div className={`flex flex-col ${isMobile ? '' : 'md:flex-row'} h-full`}>
-                <div className={`w-full ${isMobile ? 'h-auto max-h-80' : 'md:w-2/5'} bg-gray-50 relative ${isMobile ? 'aspect-square' : 'md:h-full'}`}>
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img 
-                      src={instructor.image} 
-                      alt={instructor.name} 
-                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" 
-                    />
-                  </div>
+                <div className={`w-full ${isMobile ? 'h-64' : 'md:w-2/5 md:h-auto'} bg-gray-50 relative`}>
+                  <img 
+                    src={instructor.image} 
+                    alt={instructor.name} 
+                    className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" 
+                  />
                 </div>
                 <div className={`w-full ${isMobile ? '' : 'md:w-3/5'} p-6 flex flex-col justify-between`}>
                   <div>

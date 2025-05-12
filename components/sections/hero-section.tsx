@@ -24,7 +24,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center text-white overflow-hidden">
+    <section id="hero" className="relative min-h-[80vh] flex items-center text-white overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -35,22 +35,22 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
       </div>
 
-      <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
+      <div className="container mx-auto px-4 pt-16 pb-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Text instead of Logo */}
-          <div className="relative h-32 w-80 mx-auto mb-6 flex items-center justify-center">
-            <h1 className="text-2xl font-bold text-white">
+          <div className="h-24 w-full mx-auto mb-6 flex items-center justify-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
               Primeira Turma: Dr Ivo Pitanguy
             </h1>
           </div>
           
           {/* Title and Subtitle */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 text-white">
             Beyond the <span className="text-blue-400">LowerLift</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-blue-200">
-            Cadaver Lab 2025
           </h2>
+          <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-blue-200">
+            Cadaver Lab 2025
+          </h3>
           
           {/* Date and Location */}
           <div className="mb-8 space-y-2">
