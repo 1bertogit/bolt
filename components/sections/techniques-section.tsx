@@ -3,8 +3,18 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Microscope, Scissors, Brain, Shield, Target, Clock } from "lucide-react";
+import { useEffect } from "react";
 
 export function TechniquesSection() {
+  console.log("TechniquesSection: Component rendering");
+
+  useEffect(() => {
+    console.log("TechniquesSection: Component mounted");
+    return () => {
+      console.log("TechniquesSection: Component unmounted");
+    };
+  }, []);
+
   const techniques = [
     {
       icon: <Microscope className="h-8 w-8 text-blue-600" />,
@@ -73,6 +83,8 @@ export function TechniquesSection() {
       ]
     }
   ];
+
+  console.log("TechniquesSection: Rendering with", techniques.length, "techniques");
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
