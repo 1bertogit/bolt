@@ -2,7 +2,6 @@
 
 import { SITE_CONFIG } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function HeroSection() {
@@ -28,28 +27,16 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center text-white overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={SITE_CONFIG.images.hero}
-          alt="Beyond the LowerLift Background"
-          layout="fill"
-          objectFit="cover"
-          priority
-          className="object-center"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
       </div>
 
       <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logo */}
-          <div className="relative h-32 w-80 mx-auto mb-6">
-            <Image
-              src="/assets/images/logo.png"
-              alt="Beyond the LowerLift Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          {/* Text instead of Logo */}
+          <div className="relative h-32 w-80 mx-auto mb-6 flex items-center justify-center">
+            <h1 className="text-2xl font-bold text-white">
+              Primeira Turma: Dr Ivo Pitanguy
+            </h1>
           </div>
           
           {/* Title and Subtitle */}
