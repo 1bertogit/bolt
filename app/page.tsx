@@ -7,7 +7,6 @@ import { FrustrationsSection } from "@/components/sections/frustrations-section"
 import { AboutSection } from "@/components/sections/about-section";
 import { InstructorsSection } from "@/components/sections/instructors-section";
 import { ResultsShowcaseSection } from "@/components/sections/results-showcase-section";
-import { MentorsSection } from "@/components/sections/mentors-section";
 import { DifferentialsSection } from "@/components/sections/differentials-section";
 import { AnatomicalRegionsSection } from "@/components/sections/anatomical-regions-section";
 import { TechniquesSection } from "@/components/sections/techniques-section";
@@ -17,7 +16,6 @@ import { TableComparisonSection } from "@/components/sections/table-comparison-s
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import { LogisticsSection } from "@/components/sections/logistics-section";
 import { PrerequisitesSection } from "@/components/sections/prerequisites-section";
-import { PricingSection } from "@/components/sections/pricing-section";
 import { PlansComparisonSection } from "@/components/sections/plans-comparison-section";
 import { ScheduleSection } from "@/components/sections/schedule-section";
 import { EventLocationSection } from "@/components/sections/event-location-section";
@@ -36,7 +34,6 @@ export default function Home() {
       <AboutSection />
       <InstructorsSection />
       <ResultsShowcaseSection />
-      <MentorsSection />
       <DifferentialsSection />
       <AnatomicalRegionsSection />
       <TechniquesSection />
@@ -46,7 +43,6 @@ export default function Home() {
       <ComparisonSection />
       <LogisticsSection />
       <PrerequisitesSection />
-      <PricingSection />
       <PlansComparisonSection />
       <ScheduleSection />
       <EventLocationSection />
