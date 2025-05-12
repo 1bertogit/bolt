@@ -53,9 +53,8 @@ export function HeroSection() {
           </h2>
           
           {/* Date and Location */}
-          <div className="mb-8 space-y-2">
-            <p className="text-xl">{SITE_CONFIG.date}</p>
-            <p className="text-lg text-[#5CE1E6]">{SITE_CONFIG.location}</p>
+          <div className="mb-8">
+            <p className="text-xl">{SITE_CONFIG.date} | {SITE_CONFIG.location}</p>
           </div>
           
           {/* CTA Button */}

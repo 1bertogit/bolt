@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   name: "Beyond the LowerLift",
   subtitle: "Cadaver Lab 2025",
-  date: "15 a 17 de Março, 2025",
-  location: "Hospital Santa Catarina, São Paulo - SP",
+  date: "26 a 28 de Junho de 2025",
+  location: "Campo Grande, MS",
   availableSpots: 6,
   price: {
     diamond: "R$ 23.997,00",
