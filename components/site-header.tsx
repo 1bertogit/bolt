@@ -22,6 +22,17 @@ export function SiteHeader() {
     };
   }, []);
 
+  const scrollToPlans = () => {
+    const plansSection = document.getElementById('plans');
+    if (plansSection) {
+      plansSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -33,7 +44,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center">
           <div className="relative h-12 w-40">
             <Image 
-              src="/assets/images/logo.png" 
+              src="/assets/images/logo_black.png" 
               alt="Beyond the LowerLift Logo" 
               width={90} 
               height={48} 
@@ -58,9 +69,12 @@ export function SiteHeader() {
             </a>
           ))}
           <Button 
-            className="ml-4 bg-blue-600 hover:bg-blue-700 text-white"
+            className="ml-4 bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140]"
             size="sm"
-            onClick={() => window.location.href = "#pricing"}
+            onClick={() => {
+              scrollToPlans();
+              setTimeout(handleWhatsAppClick, 1000);
+            }}
           >
             Garantir Vaga
           </Button>
@@ -94,10 +108,11 @@ export function SiteHeader() {
               </a>
             ))}
             <Button 
-              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white w-full"
+              className="mt-4 bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] w-full"
               onClick={() => {
-                window.location.href = "#pricing";
                 setIsOpen(false);
+                scrollToPlans();
+                setTimeout(handleWhatsAppClick, 1000);
               }}
             >
               Garantir Vaga
