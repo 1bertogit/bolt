@@ -10,28 +10,29 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function EventGallerySection() {
   const isMobile = useIsMobile();
   
   const galleryImages = [
     {
-      src: "https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg",
+      src: SITE_CONFIG.images.gallery.event1,
       alt: "Demonstração de técnica cirúrgica",
       caption: "Demonstração de técnica cirúrgica com supervisão especializada"
     },
     {
-      src: "https://images.pexels.com/photos/4226258/pexels-photo-4226258.jpeg",
+      src: SITE_CONFIG.images.gallery.event2,
       alt: "Procedimento cirúrgico em grupo",
       caption: "Procedimento cirúrgico colaborativo com equipe de especialistas"
     },
     {
-      src: "https://images.pexels.com/photos/4226262/pexels-photo-4226262.jpeg",
+      src: SITE_CONFIG.images.gallery.event3,
       alt: "Técnica avançada de cirurgia",
       caption: "Aplicação de técnica avançada de cirurgia facial"
     },
     {
-      src: "https://images.pexels.com/photos/4226269/pexels-photo-4226269.jpeg",
+      src: SITE_CONFIG.images.gallery.event4,
       alt: "Documentação de procedimento",
       caption: "Documentação detalhada do procedimento para análise posterior"
     }

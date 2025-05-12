@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function AnatomicalRegionsSection() {
   const [activeRegion, setActiveRegion] = useState<number | null>(null);
@@ -11,19 +12,19 @@ export function AnatomicalRegionsSection() {
     title: "Região Periocular",
     description: "Domínio completo da anatomia periocular para resultados precisos e naturais",
     details: "Aprenda os planos de dissecção seguros, técnicas de fixação e conexões neurovasculares cruciais.",
-    image: "https://images.pexels.com/photos/5723967/pexels-photo-5723967.jpeg",
+    image: SITE_CONFIG.images.regions.periocular,
     color: "blue"
   }, {
     title: "Face Média",
     description: "Abordagem estruturada da anatomia da face média para rejuvenescimento harmonioso",
     details: "Explore a relação entre estruturas anatômicas e os vetores de suspensão mais efetivos.",
-    image: "https://images.pexels.com/photos/5726837/pexels-photo-5726837.jpeg",
+    image: SITE_CONFIG.images.regions.faceMedia,
     color: "blue"
   }, {
     title: "Região Submandibular",
     description: "Técnicas avançadas para definição mandibular e correção do pescoço",
     details: "Domine os compartimentos faciais profundos e superficiais para resultados duradouros.",
-    image: "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
+    image: SITE_CONFIG.images.regions.submandibular,
     color: "blue"
   }];
 

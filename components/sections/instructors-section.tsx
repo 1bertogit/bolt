@@ -4,6 +4,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function InstructorsSection() {
   const isMobile = useIsMobile();
@@ -14,7 +15,7 @@ export function InstructorsSection() {
       title: "Cirurgião Plástico & Diretor Científico",
       bio: "Especialista em rejuvenescimento facial e criador da técnica LowerLift®. Possui mais de 15 anos de experiência em procedimentos faciais avançados e ministra cursos de anatomia aplicada em cadáveres desde 2018.",
       credentials: ["Membro Titular da Sociedade Brasileira de Cirurgia Plástica", "Coordenador de cursos avançados em anatomia facial", "Pesquisador na área de rejuvenescimento facial minimamente invasivo", "Mais de 500 procedimentos de LowerLift® realizados"],
-      image: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg",
+      image: SITE_CONFIG.images.mentors.danielNunes,
       specialization: "Rejuvenescimento Facial Avançado"
     },
     {
@@ -22,7 +23,7 @@ export function InstructorsSection() {
       title: "Cirurgião Plástico & Anatomista Clínico",
       bio: "Referência em dissecção anatômica e mapeamento de estruturas faciais. Lidera pesquisas inovadoras em planos de dissecção seguros e técnicas minimamente invasivas para resultados naturais.",
       credentials: ["Membro Titular do Colégio Brasileiro de Cirurgiões", "Pesquisador em Anatomia Cirúrgica Avançada", "Instrutor internacional de técnicas de dissecção facial", "Autor de estudos científicos sobre planos de dissecção facial"],
-      image: "https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg",
+      image: SITE_CONFIG.images.mentors.joaoIlgenfritz,
       specialization: "Anatomia Cirúrgica Aplicada"
     }
   ];
