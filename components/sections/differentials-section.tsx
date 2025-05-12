@@ -28,13 +28,13 @@ const differentials = [
   },
   {
     icon: <Award className="h-8 w-8 text-blue-600" />,
-    title: "Certificação Internacional",
-    description: "Documento reconhecido por instituições internacionais."
+    title: "Certificado de participação ",
+    description: "Beyond the LowerLift® – Cadaver Lab "
   },
   {
     icon: <BookOpen className="h-8 w-8 text-blue-600" />,
     title: "Material Exclusivo",
-    description: "Atlas digital e vídeos das técnicas para revisão."
+    description: "Ebooks e vídeos das técnicas para revisão."
   },
   {
     icon: <Gauge className="h-8 w-8 text-blue-600" />,
