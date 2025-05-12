@@ -41,7 +41,7 @@ export function InstructorsSection() {
           {instructors.map((instructor, index) => (
             <Card key={index} className="overflow-hidden border-blue-100 hover:border-blue-200 transition-all duration-300 group shadow-lg h-full">
               <div className={`flex flex-col ${isMobile ? '' : 'md:flex-row'} h-full`}>
-                <div className={`w-full ${isMobile ? 'h-64' : 'md:w-2/5 md:h-auto'} bg-gray-50 relative`}>
+                <div className={`w-full ${isMobile ? 'h-64' : 'md:w-2/5 md:h-auto'} bg-gray-50 relative overflow-hidden`}>
                   <img 
                     src={instructor.image} 
                     alt={instructor.name} 
