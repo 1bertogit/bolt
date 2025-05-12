@@ -2,6 +2,7 @@
 
 import { SITE_CONFIG } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export function HeroSection() {
@@ -32,20 +33,20 @@ export function HeroSection() {
           alt="Beyond the LowerLift Background"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#102140]/90 via-[#102140]/80 to-[#102140]/90"></div>
       </div>
 
       <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Primeira Turma Badge */}
           <div className="inline-block mb-8">
-            <div className="bg-[#5CE1E6] text-gray-900 px-4 py-1.5 rounded-full text-xs md:text-sm font-medium">
+            <div className="bg-[#5CE1E6] text-[#102140] px-6 py-2 rounded-full text-sm font-semibold tracking-wide">
               Primeira Turma: Dr. Ivo Pitanguy
             </div>
           </div>
           
           {/* Title and Subtitle */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             Beyond the <span className="text-[#5CE1E6]">LowerLift</span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-[#5CE1E6]">
@@ -53,20 +54,23 @@ export function HeroSection() {
           </h2>
           
           {/* Date and Location */}
-          <div className="mb-8">
-            <p className="text-xl">{SITE_CONFIG.date} | {SITE_CONFIG.location}</p>
+          <div className="mb-12">
+            <p className="text-xl text-[#5CE1E6]">{SITE_CONFIG.date} | {SITE_CONFIG.location}</p>
           </div>
           
-          {/* CTA Button */}
-          <div className="mb-6">
+          {/* CTA Buttons */}
+          <div className="flex flex-col items-center gap-4 mb-12">
             <Button 
               size="lg" 
-              className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-gray-900 text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
               onClick={() => window.location.href = "#pricing"}
             >
               GARANTIR MINHA VAGA AGORA
+              <ArrowRight className="h-5 w-5" />
             </Button>
-            <p className="mt-4 text-[#5CE1E6] text-lg font-medium">Apenas {SITE_CONFIG.availableSpots} vagas disponíveis</p>
+            <p className="text-[#5CE1E6] text-lg font-medium">
+              Apenas {SITE_CONFIG.availableSpots} vagas disponíveis
+            </p>
           </div>
           
           {/* Marquee Text */}
