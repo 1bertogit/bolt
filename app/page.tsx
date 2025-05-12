@@ -18,6 +18,7 @@ import { ScheduleSection } from "@/components/sections/schedule-section";
 import { EventLocationSection } from "@/components/sections/event-location-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
+import { InstructorsSection } from "@/components/sections/instructors-section";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <ExperienceSection />
       <FrustrationsSection />
       <AboutSection />
+      <InstructorsSection />
       <MentorsSection />
       <DifferentialsSection />
       <AnatomicalRegionsSection />
