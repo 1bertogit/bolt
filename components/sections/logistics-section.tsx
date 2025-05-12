@@ -1,46 +1,107 @@
-import { Calendar, MapPin, Clock } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
+"use client";
+
+import { MapPin, Truck, Bed, Wrench } from 'lucide-react';
 
 export function LogisticsSection() {
+  const logisticsItems = [
+    {
+      icon: <MapPin className="h-10 w-10 text-blue-600" />,
+      title: "Localização",
+      details: [
+        "Centro de Treinamento Especializado", 
+        "Campo Grande, MS", 
+        "Estrutura completa para dissecção anatômica", 
+        "Ambiente controlado e seguro"
+      ]
+    },
+    {
+      icon: <Truck className="h-10 w-10 text-blue-600" />,
+      title: "Transporte",
+      details: [
+        "Aeroporto Internacional de Campo Grande", 
+        "Transfer aeroporto-hotel incluso (Planos Gold e Diamond)", 
+        "Transporte diário entre hotel e centro de treinamento", 
+        "Coordenação logística completa"
+      ]
+    },
+    {
+      icon: <Bed className="h-10 w-10 text-blue-600" />,
+      title: "Hospedagem",
+      details: [
+        "Hotel 5 estrelas parceiro (incluso nos planos Gold e Diamond)", 
+        "Diárias com café da manhã", 
+        "Localização central próxima ao centro de treinamento", 
+        "Ambiente exclusivo para networking pós-aulas"
+      ]
+    },
+    {
+      icon: <Wrench className="h-10 w-10 text-blue-600" />,
+      title: "Equipamentos",
+      details: [
+        "Kit cirúrgico completo fornecido", 
+        "Microscópios de última geração", 
+        "Equipamentos de imagem de alta definição", 
+        "Material didático exclusivo"
+      ]
+    }
+  ];
+
   return (
-    <section className="py-24 bg-gray-50">
+    <section id="logistics" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <span className="bg-gradient-to-r from-[#102140] to-[#5CE1E6] bg-clip-text text-transparent">
             Informações Logísticas
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tudo o que você precisa saber sobre o evento.
-          </p>
+          </span>
+        </h2>
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Tudo cuidadosamente planejado para que você foque apenas no aprendizado
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {logisticsItems.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex justify-center mb-4">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-center text-gray-900 mb-4">
+                {item.title}
+              </h3>
+              <ul className="space-y-2">
+                {item.details.map((detail, idx) => (
+                  <li key={idx} className="text-gray-600 flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {/* Data */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-            <div className="mx-auto flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-6">
-              <Calendar className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Data</h3>
-            <p className="text-gray-700">{SITE_CONFIG.date}</p>
-          </div>
-          
-          {/* Local */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-            <div className="mx-auto flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-6">
-              <MapPin className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Local</h3>
-            <p className="text-gray-700">{SITE_CONFIG.location}</p>
-          </div>
-          
-          {/* Carga Horária */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-            <div className="mx-auto flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-6">
-              <Clock className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Carga Horária</h3>
-            <p className="text-gray-700">24 horas de imersão total</p>
-          </div>
+        <div className="mt-12 bg-blue-50 p-6 rounded-lg max-w-3xl mx-auto">
+          <h3 className="font-semibold text-xl text-gray-900 mb-4">Pré-requisitos</h3>
+          <ul className="space-y-2">
+            <li className="flex items-start">
+              <span className="text-blue-600 font-bold mr-2">•</span>
+              <span>Médicos com registro ativo no Conselho Regional de Medicina (CRM)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 font-bold mr-2">•</span>
+              <span>Preferencialmente cirurgiões plásticos, dermatologistas e otorrinolaringologistas</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 font-bold mr-2">•</span>
+              <span>Conhecimento básico em procedimentos faciais (introdutório ou intermediário)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 font-bold mr-2">•</span>
+              <span>Interesse em aprimorar técnicas avançadas de rejuvenescimento facial</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
