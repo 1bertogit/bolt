@@ -20,6 +20,7 @@ import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { InstructorsSection } from "@/components/sections/instructors-section";
 import { ResultsShowcaseSection } from "@/components/sections/results-showcase-section";
+import { EventGallerySection } from "@/components/sections/event-gallery-section";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <MentorsSection />
       <DifferentialsSection />
       <AnatomicalRegionsSection />
+      <EventGallerySection />
       <TestimonialsSection />
       <ComparisonSection />
       <LogisticsSection />
