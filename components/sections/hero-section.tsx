@@ -44,7 +44,7 @@ export function HeroSection() {
           {/* Logo */}
           <div className="relative h-32 w-80 mx-auto mb-6">
             <Image
-              src="/assets/images/logo_write.png"
+              src="/assets/images/logo_black.png"
               alt="Beyond the LowerLift Logo"
               width={320}
               height={128}
