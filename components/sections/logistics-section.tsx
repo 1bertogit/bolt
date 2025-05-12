@@ -82,28 +82,7 @@ export function LogisticsSection() {
           ))}
         </div>
 
-        <div className="mt-12 bg-blue-50 p-6 rounded-lg max-w-3xl mx-auto">
-          <h3 className="font-semibold text-xl text-gray-900 mb-4">Pré-requisitos</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start">
-              <span className="text-blue-600 font-bold mr-2">•</span>
-              <span>Médicos com registro ativo no Conselho Regional de Medicina (CRM)</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-blue-600 font-bold mr-2">•</span>
-              <span>Preferencialmente cirurgiões plásticos, dermatologistas e otorrinolaringologistas</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-blue-600 font-bold mr-2">•</span>
-              <span>Conhecimento básico em procedimentos faciais (introdutório ou intermediário)</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-blue-600 font-bold mr-2">•</span>
-              <span>Interesse em aprimorar técnicas avançadas de rejuvenescimento facial</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+ 
     </section>
   );
 }
