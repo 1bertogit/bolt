@@ -11,6 +11,7 @@ import { MentorsSection } from "@/components/sections/mentors-section";
 import { DifferentialsSection } from "@/components/sections/differentials-section";
 import { AnatomicalRegionsSection } from "@/components/sections/anatomical-regions-section";
 import { TechniquesSection } from "@/components/sections/techniques-section";
+import { EventGallerySection } from "@/components/sections/event-gallery-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import { LogisticsSection } from "@/components/sections/logistics-section";
@@ -38,6 +39,7 @@ export default function Home() {
       <DifferentialsSection />
       <AnatomicalRegionsSection />
       <TechniquesSection />
+      <EventGallerySection />
       <TestimonialsSection />
       <ComparisonSection />
       <LogisticsSection />
