@@ -81,8 +81,6 @@ export function LogisticsSection() {
             </div>
           ))}
         </div>
-
- 
     </section>
   );
 }
