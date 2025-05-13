@@ -20,7 +20,7 @@ import { EventLocationSection } from "@/components/sections/event-location-secti
 import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="min-h-screen">
       <SiteHeader />
