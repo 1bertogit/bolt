@@ -43,7 +43,7 @@ export const SITE_CONFIG = {
 export const NAVIGATION_ITEMS = [
   { name: "Início", href: "#hero" },
   { name: "Sobre", href: "#about" },
-  { name: "Técnicas", href: "#techniques" },
+  { name: "Técnicas", href: "#anatomical-regions" },
   { name: "Diferenciais", href: "#differentials" },
   { name: "Mentores", href: "#instructors" },
   { name: "Cronograma", href: "#schedule" },
