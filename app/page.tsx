@@ -36,6 +36,7 @@ export default function Home() {
       <InstructorsSection />
       <ComparisonSection />
       <EventGallerySection />
+      <TestimonialsSection />
       <LogisticsSection />
       <ScheduleSection />
       <EventLocationSection />
