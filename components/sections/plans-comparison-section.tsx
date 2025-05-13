@@ -4,34 +4,67 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check, X } from 'lucide-react';
-import { SITE_CONFIG } from "@/lib/constants";
 
 const plans = [
   {
     name: "Diamond",
     color: "text-[#77d1d6]",
     bgColor: "bg-[#e6f7f8]",
-    price: SITE_CONFIG.price.diamond,
-    priceInstallments: "10x de R$ 2.399,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico premium", "Coffee break e almoço executivo", "Hospedagem 5 estrelas (3 diárias)", "Transfers aeroporto/hotel/laboratório", "Kit exclusivo Diamond", "Certificado internacional", "Acesso à biblioteca digital vitalício", "Gravação HD individual da cirurgia", "Jantar com mentores"],
+    price: "R$ 100.000",
+    priceInstallments: "10x de R$ 10.000",
+    features: [
+      "2 Dias de Observação de Cirurgia ao Vivo",
+      "1 Dia de Experiência FaceDay® (Sistema de Conversão de Pacientes)",
+      "1 Dia de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "2 Jantares Exclusivos com o Corpo Docente",
+      "Mentoria Pós-Curso (2 Sessões Online)",
+      "Acesso às Gravações das Sessões Teóricas",
+      "Sessão de Perguntas com Especialistas"
+    ],
     cta: "Garantir Vaga Diamond"
-  }, 
+  },
   {
     name: "Gold",
     color: "text-[#d4af37]",
     bgColor: "bg-[#fbf7e9]",
-    price: SITE_CONFIG.price.gold,
-    priceInstallments: "10x de R$ 1.999,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico standard", "Coffee break e almoço", "Hospedagem 4 estrelas (3 diárias)", "Transfers aeroporto/hotel/laboratório", "Kit Gold", "Certificado internacional", "Acesso à biblioteca digital (1 ano)", "Gravação HD individual da cirurgia", "—"],
+    price: "R$ 65.000",
+    priceInstallments: "10x de R$ 6.500",
+    features: [
+      "1 Dia de Observação de Cirurgia ao Vivo",
+      "1 Dia de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "1 Jantar Exclusivo com o Corpo Docente",
+      "Acesso às Gravações das Sessões Teóricas",
+      "—",
+      "Acesso às Gravações das Sessões Teóricas",
+      "Sessão de Perguntas com Especialistas"
+    ],
     cta: "Garantir Vaga Gold"
-  }, 
+  },
   {
     name: "Black",
     color: "text-white",
     bgColor: "bg-black",
-    price: SITE_CONFIG.price.black,
-    priceInstallments: "10x de R$ 1.599,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico standard", "Coffee break", "—", "—", "Kit Black", "Certificado internacional", "Acesso à biblioteca digital (6 meses)", "—", "—"],
+    price: "R$ 60.000",
+    specialPrice: "R$ 35.000 (Alunos DNA)",
+    priceInstallments: "10x de R$ 6.000",
+    features: [
+      "—",
+      "—",
+      "2 Dias de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "—",
+      "—",
+      "Acesso às Gravações das Sessões Teóricas",
+      "Sessão de Perguntas com Especialistas"
+    ],
     cta: "Garantir Vaga Black"
   }
 ];
@@ -45,10 +78,10 @@ export function PlansComparisonSection() {
     <section id="plans" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-          Pacotes
+          Escolha seu Nível de Imersão
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-          Escolha o plano que melhor atende às suas necessidades e dê um salto em sua carreira cirúrgica com a experiência Beyond LowerLift Cadaver Lab.
+          Selecione o plano que melhor atende às suas necessidades e transforme sua prática cirúrgica.
         </p>
 
         <div className="hidden md:block">
@@ -72,6 +105,9 @@ export function PlansComparisonSection() {
                 {plans.map(plan => (
                   <TableCell key={`${plan.name}-price`} className="text-center">
                     <div className="font-bold text-lg">{plan.price}</div>
+                    {plan.specialPrice && (
+                      <div className="text-green-600 font-medium text-sm mb-1">{plan.specialPrice}</div>
+                    )}
                     <div className="text-sm text-gray-500">{plan.priceInstallments}</div>
                   </TableCell>
                 ))}
@@ -124,6 +160,9 @@ export function PlansComparisonSection() {
                 <h3 className={`text-2xl font-bold text-center ${plan.color}`}>{plan.name}</h3>
                 <div className="text-center my-4">
                   <div className="font-bold text-2xl">{plan.price}</div>
+                  {plan.specialPrice && (
+                    <div className="text-green-600 font-medium text-lg mb-1">{plan.specialPrice}</div>
+                  )}
                   <div className="text-sm opacity-75">{plan.priceInstallments}</div>
                 </div>
               </div>
