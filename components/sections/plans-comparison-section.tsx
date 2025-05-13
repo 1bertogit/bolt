@@ -8,30 +8,57 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 const plans = [
   {
-    name: "Diamond",
+    name: "DIAMOND",
+    title: "A IMERSÃO COMPLETA",
     color: "text-[#77d1d6]",
     bgColor: "bg-[#e6f7f8]",
-    price: SITE_CONFIG.price.diamond,
-    priceInstallments: "10x de R$ 2.399,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico premium", "Coffee break e almoço executivo", "Hospedagem 5 estrelas (3 diárias)", "Transfers aeroporto/hotel/laboratório", "Kit exclusivo Diamond", "Certificado internacional", "Acesso à biblioteca digital vitalício", "Gravação HD individual da cirurgia", "Jantar com mentores"],
+    price: "R$ 100.000",
+    priceInstallments: "10x de R$ 10.000",
+    features: [
+      "2 Dias de Observação de Cirurgia ao Vivo",
+      "1 Dia de Experiência FaceDay® (Sistema de Conversão de Pacientes)",
+      "1 Dia de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "2 Jantares Exclusivos com o Corpo Docente",
+      "Mentoria Pós-Curso (2 Sessões Online)"
+    ],
     cta: "Garantir Vaga Diamond"
-  }, 
+  },
   {
-    name: "Gold",
+    name: "GOLD",
+    title: "TÉCNICA CIRÚRGICA AVANÇADA & ANATOMIA APLICADA",
     color: "text-[#d4af37]",
     bgColor: "bg-[#fbf7e9]",
-    price: SITE_CONFIG.price.gold,
-    priceInstallments: "10x de R$ 1.999,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico standard", "Coffee break e almoço", "Hospedagem 4 estrelas (3 diárias)", "Transfers aeroporto/hotel/laboratório", "Kit Gold", "Certificado internacional", "Acesso à biblioteca digital (1 ano)", "Gravação HD individual da cirurgia", "—"],
+    price: "R$ 65.000",
+    priceInstallments: "10x de R$ 6.500",
+    features: [
+      "1 Dia de Observação de Cirurgia ao Vivo",
+      "1 Dia de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "1 Jantar Exclusivo com o Corpo Docente",
+      "Acesso às Gravações das Sessões Teóricas"
+    ],
     cta: "Garantir Vaga Gold"
-  }, 
+  },
   {
-    name: "Black",
+    name: "BLACK",
+    title: "MAESTRIA ANATÔMICA",
     color: "text-white",
     bgColor: "bg-black",
-    price: SITE_CONFIG.price.black,
-    priceInstallments: "10x de R$ 1.599,70",
-    features: ["Acesso completo ao laboratório cadavérico", "Material cirúrgico standard", "Coffee break", "—", "—", "Kit Black", "Certificado internacional", "Acesso à biblioteca digital (6 meses)", "—", "—"],
+    price: "R$ 60.000",
+    priceInstallments: "10x de R$ 6.000",
+    features: [
+      "2 Dias de Dissecção em Cadáveres Frescos",
+      "Material Didático Exclusivo",
+      "Certificado de participação",
+      "Coffee Breaks e Almoços Premium",
+      "Acesso às Gravações das Sessões Teóricas",
+      "Sessão de Perguntas com Especialistas"
+    ],
     cta: "Garantir Vaga Black"
   }
 ];
@@ -45,7 +72,7 @@ export function PlansComparisonSection() {
     <section id="plans" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-          Pacotes
+          ESCOLHA SEU NÍVEL DE IMERSÃO
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
           Escolha o plano que melhor atende às suas necessidades e dê um salto em sua carreira cirúrgica com a experiência Beyond LowerLift Cadaver Lab.
@@ -55,13 +82,14 @@ export function PlansComparisonSection() {
           <Table className="border border-gray-200 rounded-lg overflow-hidden shadow-lg">
             <TableHeader>
               <TableRow className="bg-gray-50">
-                <TableHead className="w-1/4">Benefícios</TableHead>
+                <TableHead className="w-1/4">O que você receberá:</TableHead>
                 {plans.map(plan => (
-                  <TableHead 
-                    key={plan.name} 
-                    className={`w-1/4 text-center ${plan.bgColor} ${plan.name === "Black" ? "text-white" : ""}`}
+                  <TableHead
+                    key={plan.name}
+                    className={`w-1/4 text-center ${plan.bgColor} ${plan.name === "BLACK" ? "text-white" : ""}`}
                   >
                     <span className={`text-xl font-bold ${plan.color}`}>{plan.name}</span>
+                    <div className="text-sm">{plan.title}</div>
                   </TableHead>
                 ))}
               </TableRow>
@@ -96,10 +124,10 @@ export function PlansComparisonSection() {
                 <TableCell></TableCell>
                 {plans.map(plan => (
                   <TableCell key={`${plan.name}-cta`} className="text-center p-4">
-                    <Button 
+                    <Button
                       className={`w-full ${
-                        plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
-                        plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
+                        plan.name === 'DIAMOND' ? 'bg-blue-600 hover:bg-blue-700' :
+                        plan.name === 'GOLD' ? 'bg-[#d4af37] hover:bg-[#b8971f]' :
                         'bg-black hover:bg-gray-800'
                       }`}
                       onClick={handleWhatsAppClick}
@@ -116,11 +144,11 @@ export function PlansComparisonSection() {
         {/* Mobile View - Cards */}
         <div className="md:hidden space-y-8">
           {plans.map(plan => (
-            <div 
-              key={plan.name} 
+            <div
+              key={plan.name}
               className={`rounded-lg overflow-hidden shadow-lg border border-gray-200 ${plan.bgColor}`}
             >
-              <div className={`p-4 ${plan.name === "Black" ? "bg-black text-white" : plan.bgColor}`}>
+              <div className={`p-4 ${plan.name === "BLACK" ? "bg-black text-white" : plan.bgColor}`}>
                 <h3 className={`text-2xl font-bold text-center ${plan.color}`}>{plan.name}</h3>
                 <div className="text-center my-4">
                   <div className="font-bold text-2xl">{plan.price}</div>
@@ -143,10 +171,10 @@ export function PlansComparisonSection() {
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <Button 
+                  <Button
                     className={`w-full ${
-                      plan.name === 'Diamond' ? 'bg-blue-600 hover:bg-blue-700' : 
-                      plan.name === 'Gold' ? 'bg-[#d4af37] hover:bg-[#b8971f]' : 
+                      plan.name === 'DIAMOND' ? 'bg-blue-600 hover:bg-blue-700' :
+                      plan.name === 'GOLD' ? 'bg-[#d4af37] hover:bg-[#b8971f]' :
                       'bg-black hover:bg-gray-800'
                     }`}
                     onClick={handleWhatsAppClick}
