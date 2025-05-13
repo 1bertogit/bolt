@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface CountdownProps {
   endDate: Date;
@@ -9,124 +10,117 @@ interface CountdownProps {
   filledSpots: number;
 }
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 export function Countdown({ endDate, totalSpots, filledSpots }: CountdownProps) {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isEnded, setIsEnded] = useState(false);
+  const [isLessThan24h, setIsLessThan24h] = useState(false);
   
   const remainingSpots = totalSpots - filledSpots;
-  const isLastSpots = remainingSpots <= 3;
-  const isLessThan24h = timeLeft.days === 0;
+  const isLowSpots = remainingSpots <= 2;
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = endDate.getTime() - now;
-
-      if (distance < 0) {
+    const calculateTimeLeft = () => {
+      const difference = endDate.getTime() - new Date().getTime();
+      
+      if (difference <= 0) {
         setIsEnded(true);
-        clearInterval(timer);
-        return;
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
       }
 
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000)
-      });
+      setIsLessThan24h(difference <= 24 * 60 * 60 * 1000);
+
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    };
+
+    setTimeLeft(calculateTimeLeft());
+    
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
   }, [endDate]);
 
+  const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <div className="flex flex-col items-center">
+      <motion.div 
+        key={value}
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className={cn(
+          "w-20 h-20 md:w-24 md:h-24 rounded-xl flex items-center justify-center mb-2",
+          "bg-gradient-to-br from-[#1a3057] to-[#102140]",
+          "border border-[#5CE1E6]/20 shadow-lg",
+          isLessThan24h && "from-red-900 to-red-800 border-red-500/20"
+        )}
+      >
+        <span className="text-3xl md:text-4xl font-bold text-white">
+          {value.toString().padStart(2, '0')}
+        </span>
+      </motion.div>
+      <span className="text-sm text-[#5CE1E6] font-medium">{label}</span>
+    </div>
+  );
+
   if (isEnded) {
     return (
-      <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-        <h3 className="text-xl font-bold text-red-600 mb-2">
-          Inscrições Encerradas
-        </h3>
-        <p className="text-red-500">
-          As inscrições para este evento já foram encerradas.
-        </p>
+      <div className="bg-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-xl p-8 text-center">
+        <h3 className="text-2xl font-bold text-red-500 mb-2">Inscrições Encerradas</h3>
+        <p className="text-white/80">O período de inscrições para este evento já se encerrou.</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6">
-      <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
-          Encerramento das Inscrições
+    <div className="bg-[#1a3057]/50 backdrop-blur-sm border border-[#5CE1E6]/20 rounded-xl p-8">
+      <div className="text-center mb-8">
+        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+          {isLessThan24h ? "Últimas Horas para Inscrição!" : "Inscrições Encerram em:"}
         </h3>
-        <p className="text-gray-600">
-          {endDate.toLocaleDateString('pt-BR', { 
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-          })}
+        <p className="text-[#5CE1E6]">
+          Data limite: {endDate.toLocaleDateString('pt-BR')} às {endDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
         </p>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 mb-6">
-        {[
-          { label: 'Dias', value: timeLeft.days },
-          { label: 'Horas', value: timeLeft.hours },
-          { label: 'Minutos', value: timeLeft.minutes },
-          { label: 'Segundos', value: timeLeft.seconds }
-        ].map((item) => (
-          <div 
-            key={item.label}
-            className="bg-gray-50 rounded-lg p-3 text-center"
-          >
-            <div className="text-2xl font-bold text-blue-600">
-              {String(item.value).padStart(2, '0')}
-            </div>
-            <div className="text-sm text-gray-500">{item.label}</div>
-          </div>
-        ))}
+      <div className="flex justify-center gap-4 mb-8">
+        <TimeUnit value={timeLeft.days} label="Dias" />
+        <TimeUnit value={timeLeft.hours} label="Horas" />
+        <TimeUnit value={timeLeft.minutes} label="Minutos" />
+        <TimeUnit value={timeLeft.seconds} label="Segundos" />
       </div>
 
-      <div className="space-y-4">
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Total de Vagas:</span>
-          <span className="font-bold">{totalSpots}</span>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className={cn(
+          "text-center p-4 rounded-lg",
+          isLowSpots ? "bg-red-500/20 border border-red-500/20" : "bg-[#5CE1E6]/10 border border-[#5CE1E6]/20"
+        )}
+      >
+        <div className="font-bold text-lg mb-1">
+          {isLowSpots ? (
+            <span className="text-red-400">Últimas {remainingSpots} vagas!</span>
+          ) : (
+            <span className="text-[#5CE1E6]">{remainingSpots} vagas disponíveis</span>
+          )}
         </div>
-        
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Vagas Preenchidas:</span>
-          <span className="font-bold">{filledSpots}</span>
+        <div className="text-sm text-white/80">
+          {filledSpots} de {totalSpots} vagas preenchidas
         </div>
-        
-        <motion.div 
-          className={`flex justify-between items-center ${
-            isLastSpots ? 'text-red-600 font-bold' : ''
-          }`}
-          animate={{ scale: isLastSpots ? [1, 1.05, 1] : 1 }}
-          transition={{ duration: 0.5, repeat: isLastSpots ? Infinity : 0 }}
-        >
-          <span>Vagas Restantes:</span>
-          <span>{remainingSpots}</span>
-        </motion.div>
-      </div>
-
-      {isLessThan24h && (
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="mt-6 bg-red-50 border border-red-100 rounded-lg p-4 text-center"
-        >
-          <p className="text-red-600 font-bold">
-            Últimas 24 horas para inscrição!
-          </p>
-        </motion.div>
-      )}
+      </motion.div>
     </div>
   );
 }
