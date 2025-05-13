@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
@@ -27,10 +25,6 @@ export function SiteHeader() {
     if (plansSection) {
       plansSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -73,7 +67,6 @@ export function SiteHeader() {
             size="sm"
             onClick={() => {
               scrollToPlans();
-              setTimeout(handleWhatsAppClick, 1000);
             }}
           >
             Garantir Vaga
@@ -112,7 +105,6 @@ export function SiteHeader() {
               onClick={() => {
                 setIsOpen(false);
                 scrollToPlans();
-                setTimeout(handleWhatsAppClick, 1000);
               }}
             >
               Garantir Vaga
