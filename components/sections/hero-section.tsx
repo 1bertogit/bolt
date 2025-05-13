@@ -36,7 +36,7 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src= "/assets/images/bg.jpg"
+          src={SITE_CONFIG.images.hero}
           alt="Beyond the LowerLift Background"
           className="w-full h-full object-cover object-center"
         />
