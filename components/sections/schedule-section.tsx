@@ -1,4 +1,3 @@
-{/* Full file content updated with correct logo path */}
 "use client";
 
 import { useState } from "react";
