@@ -42,8 +42,9 @@ export function SiteHeader() {
             <Image 
               src="/assets/images/logo.png" 
               alt="Beyond the LowerLift Logo" 
-              width={90} 
-              height={48} 
+              width={90}
+              height={48}
+              priority
               className="object-contain"
             />
           </div>
