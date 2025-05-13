@@ -28,7 +28,7 @@ const plans = [
   },
   {
     name: "Gold",
-    title: "EXPERIÊNCIA GOLD: TÉCNICA CIRÚRGICA AVANÇADA & ANATOMIA APLICADA",
+    title: "EXPERIÊNCIA GOLD: T    ÉCNICA CIRÚRGICA AVANÇADA & ANATOMIA APLICADA",
     color: "text-[#d4af37]",
     bgColor: "bg-[#fbf7e9]",
     price: "R$ 65.000",
