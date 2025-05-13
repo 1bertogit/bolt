@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
     instagram: "@beyondthelowerlift"
   },
   images: {
-    hero: "/assets/images/event-1.jpg",
+    hero: "/assets/images/bg.jpg",
     mentors: {
       danielNunes: "/assets/images/mentor-daniel-nunes.jpg",
       joaoIlgenfritz: "/assets/images/mentor-joao-ilgenfritz.jpg"
@@ -36,8 +36,7 @@ export const SITE_CONFIG = {
       event2: "/assets/images/event-2.jpg",
       event3: "/assets/images/event-3.jpg",
       event4: "/assets/images/event-4.jpg"
-    },
-    location: "/assets/images/event-1.jpg"
+    }
   }
 };
 
