@@ -151,14 +151,14 @@ export function ScheduleSection() {
           </head>
           <body>
             <div class="header-logo">
-              <img src="/assets/images/logo.png" class="logo" alt="Beyond the LowerLift" />
+              <img src="/assets/images/logo_black.png" class="logo" alt="Beyond the LowerLift" />
             </div>
             
             <h1>Cronograma Completo - Cadaver Lab 2025</h1>
             
             <div class="event-info">
-              <p><strong>Local:</strong> {SITE_CONFIG.location}</p>
-              <p><strong>Data:</strong> {SITE_CONFIG.date}</p>
+              <p><strong>Local:</strong> ${SITE_CONFIG.location}</p>
+              <p><strong>Data:</strong> ${SITE_CONFIG.date}</p>
             </div>
             
             ${scheduleData.map((day, index) => `
