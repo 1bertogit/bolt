@@ -142,7 +142,7 @@ export function ScheduleSection() {
           </head>
           <body>
             <div class="header-logo">
-              <img src="/assets/images/logo.png" class="logo" alt="Beyond the LowerLift" />
+              <img src="/home/project/public/assets/images/logo.png" class="logo" alt="Beyond the LowerLift" />
             </div>
             
             <h1>Cronograma Completo - Cadaver Lab 2025</h1>
