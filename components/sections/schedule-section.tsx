@@ -58,7 +58,6 @@ export function ScheduleSection() {
   const [activeTab, setActiveTab] = useState("day1");
 
   const handleDownloadPDF = () => {
-    // Em um ambiente real, aqui seria gerado o PDF
     const printWindow = window.open('', '_blank');
     if (printWindow) {
       printWindow.document.write(`
@@ -138,11 +137,21 @@ export function ScheduleSection() {
                 color: #718096;
                 font-size: 14px;
               }
+
+              .header-logo {
+                text-align: center;
+                margin-bottom: 30px;
+              }
+
+              .header-logo img {
+                width: 60px;
+                height: auto;
+              }
             </style>
           </head>
           <body>
             <div class="header-logo">
-              <img src="/assets/images/logo.png" class="logo" alt="Beyond the LowerLift" />
+              <img src="/assets/images/logo.png" alt="Beyond the LowerLift" />
             </div>
             
             <h1>Cronograma Completo - Cadaver Lab 2025</h1>
