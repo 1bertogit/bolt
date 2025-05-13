@@ -69,11 +69,11 @@ export function HeroSection() {
           <div className="flex flex-col items-center gap-4 mb-12">
             <Button 
               size="lg" 
-              className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
+              className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] text-base md:text-lg font-bold px-6 md:px-8 py-4 md:py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 scale-90 md:scale-100"
               onClick={scrollToPlans}
             >
               GARANTIR MINHA VAGA AGORA
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
             </Button>
             <p className="text-[#5CE1E6] text-lg font-medium">
               Apenas {SITE_CONFIG.availableSpots} vagas disponíveis
