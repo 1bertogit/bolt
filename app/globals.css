@@ -44,7 +44,6 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -95,6 +94,9 @@
   p {
     @apply text-base md:text-lg leading-relaxed;
   }
+  .text-caption {
+    @apply text-sm text-gray-600;
+  }
 }
 
 @layer components {
@@ -109,8 +111,5 @@
   }
   .card-description {
     @apply text-gray-600;
-  }
-  .text-caption {
-    @apply text-sm text-gray-600;
   }
 }
