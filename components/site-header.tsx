@@ -44,7 +44,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center">
           <div className="relative h-12 w-40">
             <Image 
-              src="/assets/images/logo_black.png" 
+              src="/assets/images/logo.png" 
               alt="Beyond the LowerLift Logo" 
               width={90} 
               height={48} 
