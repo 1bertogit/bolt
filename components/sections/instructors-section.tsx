@@ -45,7 +45,10 @@ export function InstructorsSection() {
                   <img 
                     src={instructor.image} 
                     alt={instructor.name} 
-                    className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                    style={{
+                      objectPosition: isMobile ? 'center 15%' : 'center center'
+                    }}
                   />
                 </div>
                 <div className={`w-full ${isMobile ? '' : 'md:w-3/5'} p-6 flex flex-col justify-between`}>
