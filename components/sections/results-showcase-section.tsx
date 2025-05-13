@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function ResultsShowcaseSection() {
   const isMobile = useIsMobile();
@@ -12,14 +13,14 @@ export function ResultsShowcaseSection() {
   const results = [{
     title: "LowerLift® com abordagem da região cervical",
     description: "Rejuvenescimento completo do terço inferior facial com definição do contorno mandibular e correção da flacidez cervical.",
-    before: "/assets/images/lowerlift-before.jpg",
-    after: "/assets/images/lowerlift-after.jpg",
+    before: SITE_CONFIG.images.results.lowerliftBefore,
+    after: SITE_CONFIG.images.results.lowerliftAfter,
     mentor: "Dr. Daniel Nunes"
   }, {
     title: "Face Média com Técnica Deep Plane",
     description: "Elevação da face média com abordagem profunda, preservando a naturalidade da expressão facial.",
-    before: "/assets/images/facemedia-before.jpg",
-    after: "/assets/images/facemedia-after.jpg",
+    before: SITE_CONFIG.images.results.facemediaBefore,
+    after: SITE_CONFIG.images.results.facemediaAfter,
     mentor: "Dr. João Ilgenfritz"
   }];
 
