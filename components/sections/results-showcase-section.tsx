@@ -13,14 +13,14 @@ export function ResultsShowcaseSection() {
   const results = [{
     title: "LowerLift® com abordagem da região cervical",
     description: "Rejuvenescimento completo do terço inferior facial com definição do contorno mandibular e correção da flacidez cervical.",
-    before: "/assets/images/lowerlift-before.jpg",
-    after: "/assets/images/lowerlift-after.jpg",
+    before: SITE_CONFIG.images.results.lowerliftBefore,
+    after: SITE_CONFIG.images.results.lowerliftAfter,
     mentor: "Dr. Daniel Nunes"
   }, {
     title: "Face Média com Técnica Deep Plane",
     description: "Elevação da face média com abordagem profunda, preservando a naturalidade da expressão facial.",
-    before: "/assets/images/facemedia-before.jpg",
-    after: "/assets/images/facemedia-after.jpg",
+    before: SITE_CONFIG.images.results.facemediaBefore,
+    after: SITE_CONFIG.images.results.facemediaAfter,
     mentor: "Dr. João Ilgenfritz"
   }];
 
@@ -93,7 +93,7 @@ export function ResultsShowcaseSection() {
                     whileHover={{ x: 5 }}
                     className="mt-6 flex items-center text-blue-600 font-medium"
                   >
-                    Aprenda esta técnica na imersão
+                    Aprenda esta técnica no curso
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </motion.div>
                 </div>
@@ -104,7 +104,7 @@ export function ResultsShowcaseSection() {
                     onMouseMove={e => handleSliderMove(index, e)}
                     onTouchMove={e => handleSliderMove(index, e)}
                   >
-                    <AspectRatio ratio={3/4} className="w-full h-full">
+                    <AspectRatio ratio={4 / 5} className="w-full h-full">
                       <img 
                         src={result.after} 
                         alt="Depois" 
@@ -165,6 +165,7 @@ export function ResultsShowcaseSection() {
         </motion.div>
       </div>
       
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent"></div>
       <div className="absolute w-72 h-72 rounded-full bg-blue-100/50 -bottom-36 -left-36 blur-3xl"></div>
       <div className="absolute w-96 h-96 rounded-full bg-gray-100/50 -top-48 -right-48 blur-3xl"></div>
     </section>
