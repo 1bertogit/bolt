@@ -9,7 +9,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 const scheduleData = [
   {
     day: "Dia 1",
-    date: "26 de Junho, 2025",
+    date: "15 de Março, 2025",
     schedule: [
       { time: "08:00 - 09:00", activity: "Recepção e Credenciamento", icon: <Users className="h-5 w-5 text-blue-600" /> },
       { time: "09:00 - 10:30", activity: "Introdução à Anatomia Facial Avançada", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
@@ -24,7 +24,7 @@ const scheduleData = [
   },
   {
     day: "Dia 2",
-    date: "27 de Junho, 2025",
+    date: "16 de Março, 2025",
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
       { time: "09:00 - 10:30", activity: "Demonstração: Região Cervical", icon: <Microscope className="h-5 w-5 text-blue-600" /> },
@@ -39,7 +39,7 @@ const scheduleData = [
   },
   {
     day: "Dia 3",
-    date: "28 de Junho, 2025",
+    date: "17 de Março, 2025",
     schedule: [
       { time: "08:30 - 09:00", activity: "Recap do Dia Anterior", icon: <BookOpen className="h-5 w-5 text-blue-600" /> },
       { time: "09:00 - 10:30", activity: "Demonstração: Região Periorbital", icon: <Microscope className="h-5 w-5 text-blue-600" /> },
@@ -58,6 +58,7 @@ export function ScheduleSection() {
   const [activeTab, setActiveTab] = useState("day1");
 
   const handleDownloadPDF = () => {
+    // Em um ambiente real, aqui seria gerado o PDF
     const printWindow = window.open('', '_blank');
     if (printWindow) {
       printWindow.document.write(`
@@ -137,21 +138,11 @@ export function ScheduleSection() {
                 color: #718096;
                 font-size: 14px;
               }
-
-              .header-logo {
-                text-align: center;
-                margin-bottom: 30px;
-              }
-
-              .header-logo img {
-                max-width: 200px;
-                height: auto;
-              }
             </style>
           </head>
           <body>
             <div class="header-logo">
-              <img src="/assets/images/logo_black.png" class="logo" alt="Beyond the LowerLift" />
+              <img src="/assets/images/logo.png" class="logo" alt="Beyond the LowerLift" />
             </div>
             
             <h1>Cronograma Completo - Cadaver Lab 2025</h1>
