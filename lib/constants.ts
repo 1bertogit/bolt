@@ -2,8 +2,10 @@ export const SITE_CONFIG = {
   name: "Beyond the LowerLift",
   subtitle: "Cadaver Lab 2025",
   date: "26 a 28 de Junho de 2025",
+  eventStartDate: "2025-06-26",
   location: "Campo Grande, MS",
   availableSpots: 6,
+  filledSpots: 3,
   price: {
     diamond: "R$ 100.000",
     gold: "R$ 65.000",

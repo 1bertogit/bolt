@@ -3,8 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { Countdown } from "@/components/ui/countdown";
 
 export function CTASection() {
+  // Data de encerramento: 7 dias antes do evento
+  const eventDate = new Date(SITE_CONFIG.eventStartDate);
+  const endDate = new Date(eventDate);
+  endDate.setDate(eventDate.getDate() - 7);
+
   return (
     <section className="py-24 bg-gradient-to-br from-[#102140] to-[#1a3057] text-white">
       <div className="container mx-auto px-4">
@@ -17,45 +23,49 @@ export function CTASection() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center mb-12">
-          <Button 
-            size="lg" 
-            className="bg-[#5CE1E6] hover:bg-[#4BCDC2] text-gray-900 text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center"
-            onClick={() => window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer')}
-          >
-            QUERO ME INSCREVER
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-start gap-4">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#5CE1E6]/20 flex-shrink-0">
-              <Calendar className="h-6 w-6 text-[#5CE1E6]" />
-            </div>
-            <div>
-              <h3 className="font-bold text-white mb-1">Data</h3>
-              <p className="text-[#5CE1E6]">{SITE_CONFIG.date}</p>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          <div>
+            <Countdown 
+              endDate={endDate}
+              totalSpots={SITE_CONFIG.availableSpots}
+              filledSpots={SITE_CONFIG.filledSpots}
+            />
           </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-start gap-4">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#5CE1E6]/20 flex-shrink-0">
-              <MapPin className="h-6 w-6 text-[#5CE1E6]" />
-            </div>
-            <div>
-              <h3 className="font-bold text-white mb-1">Local</h3>
-              <p className="text-[#5CE1E6]">{SITE_CONFIG.location}</p>
-            </div>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-start gap-4">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#5CE1E6]/20 flex-shrink-0">
-              <Users className="h-6 w-6 text-[#5CE1E6]" />
-            </div>
-            <div>
-              <h3 className="font-bold text-white mb-1">Vagas</h3>
-              <p className="text-[#5CE1E6]">Apenas {SITE_CONFIG.availableSpots} vagas disponíveis</p>
+
+          <div className="space-y-8">
+            <Button 
+              size="lg" 
+              className="w-full bg-[#5CE1E6] hover:bg-[#4BCDC2] text-gray-900 text-lg font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
+              onClick={() => window.open('https://wa.me/556791155498', '_blank', 'noopener,noreferrer')}
+            >
+              QUERO ME INSCREVER
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex items-start gap-3">
+                <Calendar className="h-5 w-5 text-[#5CE1E6] flex-shrink-0" />
+                <div className="text-sm">
+                  <div className="font-bold text-white">Data</div>
+                  <div className="text-[#5CE1E6]">{SITE_CONFIG.date}</div>
+                </div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-[#5CE1E6] flex-shrink-0" />
+                <div className="text-sm">
+                  <div className="font-bold text-white">Local</div>
+                  <div className="text-[#5CE1E6]">{SITE_CONFIG.location}</div>
+                </div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex items-start gap-3">
+                <Users className="h-5 w-5 text-[#5CE1E6] flex-shrink-0" />
+                <div className="text-sm">
+                  <div className="font-bold text-white">Vagas</div>
+                  <div className="text-[#5CE1E6]">Apenas {SITE_CONFIG.availableSpots} vagas</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
