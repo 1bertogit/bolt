@@ -46,8 +46,8 @@ export function HeroSection() {
       <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Primeira Turma Badge */}
-          <div className="inline-block mb-8">
-            <div className="bg-[#5CE1E6] text-[#102140] px-6 py-2 rounded-full text-sm font-semibold tracking-wide">
+          <div className="inline-block mb-8 scale-100 md:scale-100 transform-gpu">
+            <div className="bg-[#5CE1E6] text-[#102140] px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transform scale-70 md:scale-100">
               Primeira Turma: Dr. Ivo Pitanguy
             </div>
           </div>
