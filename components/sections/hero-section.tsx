@@ -62,7 +62,7 @@ export function HeroSection() {
           
           {/* Date and Location */}
           <div className="mb-12">
-            <p className="text-xl text-[#5CE1E6]">{SITE_CONFIG.date} | {SITE_CONFIG.location}</p>
+            <p className="text-base md:text-xl text-[#5CE1E6]">{SITE_CONFIG.date} | {SITE_CONFIG.location}</p>
           </div>
           
           {/* CTA Buttons */}
