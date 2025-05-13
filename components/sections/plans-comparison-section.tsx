@@ -9,7 +9,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 const plans = [
   {
     name: "DIAMOND",
-    title: "A IMERSÃO COMPLETA",
+    title: "Imersão completa",
     color: "text-[#77d1d6]",
     bgColor: "bg-[#e6f7f8]",
     price: "R$ 100.000",
@@ -28,7 +28,7 @@ const plans = [
   },
   {
     name: "GOLD",
-    title: "TÉCNICA CIRÚRGICA AVANÇADA & ANATOMIA APLICADA",
+    title: "Técnica cirúrgica avançada & Anatomia aplicada",
     color: "text-[#d4af37]",
     bgColor: "bg-[#fbf7e9]",
     price: "R$ 65.000",
@@ -188,7 +188,7 @@ export function PlansComparisonSection() {
         </div>
 
         <div className="mt-10 text-center text-sm text-gray-500">
-          <p>* Vagas limitadas a 2 por plano (total de 6 participantes)</p>
+          <p>* Vagas limitadas</p>
           <p>* Valores sujeitos a alteração sem aviso prévio</p>
         </div>
       </div>
