@@ -13,28 +13,6 @@ const nextConfig = {
   webpack: (config, { isServer }) => {
     config.cache = false;
     return config;
-  },
-  headers: async () => {
-    return [
-      {
-        source: '/assets/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=604800, stale-while-revalidate=86400'
-          }
-        ]
-      },
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          }
-        ]
-      }
-    ];
   }
 };
 
