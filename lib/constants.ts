@@ -5,9 +5,9 @@ export const SITE_CONFIG = {
   location: "Campo Grande, MS",
   availableSpots: 6,
   price: {
-    diamond: "R$ 23.997,00",
-    gold: "R$ 19.997,00",
-    black: "R$ 15.997,00"
+    diamond: "R$ 100.000",
+    gold: "R$ 65.000",
+    black: "R$ 35.000"
   },
   contact: {
     email: "contato@beyondthelowerlift.com",
@@ -43,10 +43,10 @@ export const SITE_CONFIG = {
 export const NAVIGATION_ITEMS = [
   { name: "Início", href: "#hero" },
   { name: "Sobre", href: "#about" },
-  { name: "Benefícios", href: "#benefits" },
+  { name: "Técnicas", href: "#techniques" },
   { name: "Diferenciais", href: "#differentials" },
-  { name: "Mentores", href: "#mentors" },
+  { name: "Mentores", href: "#instructors" },
   { name: "Cronograma", href: "#schedule" },
-  { name: "Investimento", href: "#pricing" },
+  { name: "Investimento", href: "#plans" },
   { name: "FAQ", href: "#faq" },
 ];
