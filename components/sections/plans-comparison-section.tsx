@@ -46,7 +46,7 @@ const plans = [
   },
   {
     name: "BLACK",
-    title: "MAESTRIA ANATÔMICA",
+    title: "Maestria anatômica",
     color: "text-white",
     bgColor: "bg-black",
     price: "R$ 60.000",
