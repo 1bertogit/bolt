@@ -27,6 +27,7 @@ export function SiteHeader() {
     if (plansSection) {
       plansSection.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsOpen(false);
   };
 
   return (
@@ -68,9 +69,7 @@ export function SiteHeader() {
           <Button 
             className="ml-4 bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140]"
             size="sm"
-            onClick={() => {
-              scrollToPlans();
-            }}
+            onClick={scrollToPlans}
           >
             Garantir Vaga
           </Button>
@@ -105,10 +104,7 @@ export function SiteHeader() {
             ))}
             <Button 
               className="mt-4 bg-[#5CE1E6] hover:bg-[#4BCDC2] text-[#102140] w-full"
-              onClick={() => {
-                setIsOpen(false);
-                scrollToPlans();
-              }}
+              onClick={scrollToPlans}
             >
               Garantir Vaga
             </Button>
