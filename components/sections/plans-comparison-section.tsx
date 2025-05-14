@@ -11,7 +11,7 @@ const plans = [
     color: "text-[#77d1d6]",
     bgColor: "bg-[#e6f7f8]",
     price: "R$ 100.000",
-    priceInstallments: "10x de R$ 10.000",
+    priceInstallments: "Entrada de 50% + parcelamento em até 10x",
     features: [
       "2 Dias de Observação de Cirurgia ao Vivo",
       "1 Dia de Experiência FaceDay® (Sistema de Conversão de Pacientes)",
@@ -31,7 +31,7 @@ const plans = [
     color: "text-[#d4af37]",
     bgColor: "bg-[#fbf7e9]",
     price: "R$ 65.000",
-    priceInstallments: "10x de R$ 6.500",
+    priceInstallments: "Entrada de 50% + parcelamento em até 10x",
     features: [
       "1 Dia de Observação de Cirurgia ao Vivo",
       "2 Dias de Dissecção em Cadáveres Frescos",
@@ -51,8 +51,8 @@ const plans = [
     color: "text-white",
     bgColor: "bg-black",
     price: "R$ 60.000",
-    specialPrice: "R$ 35.000 (Alunos DNA)",
-    priceInstallments: "10x de R$ 6.000",
+    specialPrice: "R$ 35.000 (50% de desconto para Alunos DNA)",
+    priceInstallments: "Entrada de 50% + parcelamento em até 10x",
     features: [
       "—",
       "—",
