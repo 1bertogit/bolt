@@ -15,7 +15,7 @@ const plans = [
     features: [
       "2 Dias de Observação de Cirurgia ao Vivo",
       "1 Dia de Experiência FaceDay® (Sistema de Conversão de Pacientes)",
-      "1 Dia de Dissecção em Cadáveres Frescos",
+      "2 dias de Dissecção em Cadáveres Frescos",
       "Material Didático Exclusivo",
       "Certificado de participação",
       "Coffee Breaks e Almoços Premium",
@@ -34,7 +34,7 @@ const plans = [
     priceInstallments: "10x de R$ 6.500",
     features: [
       "1 Dia de Observação de Cirurgia ao Vivo",
-      "2 Dia de Dissecção em Cadáveres Frescos",
+      "2 Dias de Dissecção em Cadáveres Frescos",
       "Material Didático Exclusivo",
       "Certificado de participação",
       "Coffee Breaks e Almoços Premium",
