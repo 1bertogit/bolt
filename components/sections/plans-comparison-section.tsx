@@ -34,7 +34,7 @@ const plans = [
     priceInstallments: "10x de R$ 6.500",
     features: [
       "1 Dia de Observação de Cirurgia ao Vivo",
-      "1 Dia de Dissecção em Cadáveres Frescos",
+      "2 Dia de Dissecção em Cadáveres Frescos",
       "Material Didático Exclusivo",
       "Certificado de participação",
       "Coffee Breaks e Almoços Premium",
